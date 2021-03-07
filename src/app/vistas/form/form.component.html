@@ -1,0 +1,16 @@
+<br>
+<form class="card m-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input  [formControl]="nombre"
+    class="form-control" placeholder="nombre"/>
+            <label for="nombre" class="form-label">Detalle</label>
+    <input  [formControl]="detalle"
+    class="form-control" placeholder="detalle"/>
+            <label for="nombre" class="form-label">Precio</label>
+    <input  [formControl]="precio"
+    class="form-control" placeholder="precio"/>
+
+    <button (click)="addProducto()" class="btn btn-primary">
+          Guardar
+    </button>
+</form>

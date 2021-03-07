@@ -1,0 +1,52 @@
+
+<form class="card m-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input  [formControl]="nombre"
+    class="form-control" placeholder="nombre"/>
+            <label for="nombre" class="form-label">Detalle</label>
+    <input  [formControl]="detalle"
+    class="form-control" placeholder="detalle"/>
+            <label for="nombre" class="form-label">Precio</label>
+    <input  [formControl]="precio"
+    class="form-control" placeholder="precio"/>
+
+    <button (click)="addProducto()"  class="btn btn-primary mr-40">
+          Aceptar
+    </button>
+    <button onclick="location.reload()" class="btn btn-danger  mr-40">
+        Cancelar
+  </button>
+</form>
+<div class="container">
+     <div class="row">
+        <div *ngFor="let producto of Productos">
+            
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        
+                        <div class="card-body">
+                        <p class="card-text">{{producto.id}}</p>
+                        <h5 class="card-title">{{producto.nombre}}</h5>
+                        <p class="card-text">{{producto.detalle}}</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{producto.precio}}</li>
+                            <button (click)="deleteProducto(producto.id)"
+           class="btn btn-danger mr-4">
+            delete
+        </button>
+        <br>
+        <button (click)="getProducto(producto.id)"
+            class="btn btn-primary  mr-4">
+            update
+        </button>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
